@@ -176,5 +176,5 @@
 5. 再次点击启动即可正常运行
 
 ## 引用
-[https://github.com/EsotericSoftware/spine-runtimes/tree/4.1/spine-csharp](https://github.com/EsotericSoftware/spine-runtimes/tree/4.1/spine-csharp)
-[https://www.bilibili.com/video/BV1Va411m7SD](https://www.bilibili.com/video/BV1Va411m7SD)
+* [https://github.com/EsotericSoftware/spine-runtimes/tree/4.1/spine-csharp](https://github.com/EsotericSoftware/spine-runtimes/tree/4.1/spine-csharp)
+* [https://www.bilibili.com/video/BV1Va411m7SD](https://www.bilibili.com/video/BV1Va411m7SD)
