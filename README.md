@@ -168,9 +168,13 @@
 
 ## 桌面端部署方法
 
-1. 下载本项目, 通过VisualStudio打开 `VPet.sln` 文件
+1. 下载本项目, 通过(支持.net6的)VisualStudio打开 `VPet.sln` 文件
 2. 在生成栏中, 选择 位数为 `x64` 和生成项目为 `Vpet-Simulator.Windows`
    ![image-20230208004330895](README.assets/image-20230208004330895.png)
 3. 点击启动, 如果一切正常则会报错 `缺少模组Core,无法启动桌宠`
 4. 以管理员身份运行 `mklink.bat`, 这会让mod文件链接到生成位置
 5. 再次点击启动即可正常运行
+
+## 引用
+[https://github.com/EsotericSoftware/spine-runtimes/tree/4.1/spine-csharp](https://github.com/EsotericSoftware/spine-runtimes/tree/4.1/spine-csharp)
+[https://www.bilibili.com/video/BV1Va411m7SD](https://www.bilibili.com/video/BV1Va411m7SD)
