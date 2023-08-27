@@ -173,8 +173,8 @@ namespace VPet_Simulator.Windows
                 case "LB":
                     RBCGPTUseLB.IsChecked = true;
                     BtnCGPTReSet.Content = "初始化桌宠聊天程序".Translate();
-                    if (!mw.IsSteamUser)
-                        BtnCGPTReSet.IsEnabled = false;
+                    //if (!mw.IsSteamUser)
+                    //    BtnCGPTReSet.IsEnabled = false;
                     break;
                 case "OFF":
                 default:
@@ -1187,7 +1187,7 @@ namespace VPet_Simulator.Windows
         {
             if (MessageBoxX.Show("是否重置游戏数据重新开始?\n该操作无法撤回".Translate(), "重新开始".Translate(), MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                mw.Core.Save = new GameSave();
+                mw.Core.Save = new GameSave(mw.Core.Save.Name);
                 mw.Set.Statistics = new Statistics();
                 CBSaveReLoad.IsEnabled = false;
                 BtnSaveReload.IsEnabled = false;
