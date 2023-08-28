@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 
-namespace VPet_Simulator.Core.SpineLib
+namespace VPet.Plugin.SpineSupport4_1
 {
     public class SkeletonRenderer
     {

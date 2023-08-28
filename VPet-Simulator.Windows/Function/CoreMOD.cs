@@ -245,7 +245,7 @@ namespace VPet_Simulator.Windows
                                         }
                                     }
                                 }
-                                catch
+                                catch(Exception e)
                                 {
                                     SuccessLoad = false;
                                 }

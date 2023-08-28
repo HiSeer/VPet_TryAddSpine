@@ -60,7 +60,6 @@ namespace VPet_Simulator.Core
             { "pnganimation", PNGAnimation.LoadGraph},
             { "picture", Picture.LoadGraph },
             { "foodanimation", FoodAnimation.LoadGraph },
-            { "spine", SpineAnimation.LoadGraph },
         };
         /// <summary>
         /// 加载图像动画

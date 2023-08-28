@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{513DFC00-45C9-455D-944B-251A11A14A80}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>VPet.Plugin.SpineSupport4_1</RootNamespace>
+    <AssemblyName>VPet.Plugin.SpineSupport4_1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LinePutScript, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinePutScript.1.9.2\lib\net462\LinePutScript.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SpineAnimation.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Animation.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\AnimationState.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\AnimationStateData.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Atlas.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\AtlasAttachmentLoader.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\Attachment.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\AttachmentLoader.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\AttachmentType.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\BoundingBoxAttachment.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\ClippingAttachment.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\IHasTextureRegion.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\MeshAttachment.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\PathAttachment.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\PointAttachment.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\RegionAttachment.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\Sequence.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Attachments\VertexAttachment.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\BlendMode.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Bone.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\BoneData.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\ConstraintData.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Event.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\EventData.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\ExposedList.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\IkConstraint.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\IkConstraintData.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\IUpdatable.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Json.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\MathUtils.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\PathConstraint.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\PathConstraintData.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Skeleton.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\SkeletonBinary.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\SkeletonBounds.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\SkeletonClipping.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\SkeletonData.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\SkeletonJson.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\SkeletonLoader.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Skin.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Slot.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\SlotData.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\TextureRegion.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\TransformConstraint.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\TransformConstraintData.cs" />
+    <Compile Include="SpineLib\OfficialLibrary4.1\Triangulator.cs" />
+    <Compile Include="SpineLib\SkeletonRenderer.cs" />
+    <Compile Include="SpineSupport4_1.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SpineLib\OfficialLibrary4.1\package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SpineLib\OfficialLibrary4.1\LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VPet-Simulator.Core\VPet-Simulator.Core.csproj">
+      <Project>{7bd4cb1d-c8f3-4349-9bf0-cd11789130ba}</Project>
+      <Name>VPet-Simulator.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VPet-Simulator.Windows.Interface\VPet-Simulator.Windows.Interface.csproj">
+      <Project>{dcad838a-1a02-4bdf-962c-fd47c6006d28}</Project>
+      <Name>VPet-Simulator.Windows.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

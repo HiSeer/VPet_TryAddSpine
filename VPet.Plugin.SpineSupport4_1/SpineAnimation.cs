@@ -5,9 +5,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
-using VPet_Simulator.Core.SpineLib;
+using VPet_Simulator.Core;
 
-namespace VPet_Simulator.Core
+namespace VPet.Plugin.SpineSupport4_1
 {
     public class SpineAnimation : IGraph
     {
@@ -97,22 +97,23 @@ namespace VPet_Simulator.Core
             var skeletonRenderer = new SkeletonRenderer(500, 500, $"{path.FullName}\\{info.info}");
             LpsDocument lps = new LpsDocument(File.ReadAllText(path.FullName + $"\\{info.info}.lps"));
             //遍历line里的信息 生成对应的spineanimation
-            foreach (GraphInfo.GraphType item in Enum.GetValues(typeof(GraphInfo.GraphType)))
+            foreach (ILine iline in lps)
             {
-                string typeName = item.ToString();
-                var iline = lps.FindLine(typeName);
-                if (iline != null)
+                string aniName = iline.info;
+
+                var loopSub = iline.Find("loop");
+                bool isloop = false;
+                if (loopSub != null)
                 {
-                    string aniName = iline.info;
-                    var loopSub = iline.Find("loop");
-                    bool isloop = false;
-                    if (loopSub != null)
-                    {
-                        isloop = bool.Parse(loopSub.info);
-                    }
-                    var graphInfo = new GraphInfo(aniName, item);
-                    graph.AddGraph(new SpineAnimation(aniName, graph, skeletonRenderer, graphInfo, isloop));
+                    isloop = bool.Parse(loopSub.info);
                 }
+                //var graphType = PraseSubEnum<GraphInfo.GraphType>(iline, "graph");
+                Enum.TryParse(iline.Name, out GraphInfo.GraphType graphType);
+                var animatType = PraseSubEnum<GraphInfo.AnimatType>(iline, "animat");
+                var modeType = PraseSubEnum<GameSave.ModeType>(iline, "mode", GameSave.ModeType.Nomal);
+
+                var graphInfo = new GraphInfo(aniName, graphType, animatType, modeType);
+                graph.AddGraph(new SpineAnimation(aniName, graph, skeletonRenderer, graphInfo, isloop));
             }
 
             //todo 对内置的重启有影响吗 会重启后一直挂着导致gc无法回收或报错吗
@@ -121,6 +122,16 @@ namespace VPet_Simulator.Core
                 skeletonRenderer.Update();
                 //Console.WriteLine("CompositionTarget.Rendering" + DateTime.Now.Millisecond);
             };
+        }
+        public static T PraseSubEnum<T>(ILine line, string sub, T defaultValue = default(T)) where T : struct
+        {
+            var subValue = line.Find(sub);
+            if (subValue == null) return defaultValue;
+            if (Enum.TryParse<T>(subValue.info, out T res))
+            {
+                return res;
+            }
+            return defaultValue;
         }
     }
 }
