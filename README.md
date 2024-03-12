@@ -1,3 +1,5 @@
+添加了spine支持
+
 # VPet-Simulator
 
 简体中文 | [English](./README_en.md)
